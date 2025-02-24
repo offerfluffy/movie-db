@@ -28,15 +28,11 @@ const deleteAdv = (arr) => {
   });
 };
 
-deleteAdv(advs);
-
 const makeChanges = () => {
   promoGenre.textContent = "драма".toUpperCase();
   promoBg.style.backgroundImage = 'url("../img/bg.jpg")';
   promoInteractiveList.innerHTML = "";
 };
-
-makeChanges();
 
 function renderMovies(movies, parent) {
   parent.innerHTML = movies
@@ -51,8 +47,6 @@ function renderMovies(movies, parent) {
 
   setEventListenersOnDelete();
 }
-
-renderMovies(movies, promoInteractiveList);
 
 function setEventListenersOnDelete() {
   const deleteBtns = document.querySelectorAll(".delete");
@@ -85,3 +79,8 @@ form.addEventListener("submit", (e) => {
 
   e.target.reset();
 });
+
+makeChanges();
+deleteAdv(advs);
+
+renderMovies(movies, promoInteractiveList);
